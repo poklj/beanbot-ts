@@ -6,7 +6,7 @@ Uses the "Screeps Typescript Starter" found at https://github.com/screepers/scre
 
 Focuses on upgrading the capabilities of my own screeps bot by following Jon Winsley's blog he made back in 2020 (https://www.jonwinsley.com/screeps/2020/09/21/screeps-game-plan/) for some of the more integral parts of creep management and organizing multiroom function. Also using a more sane and sought language in the form of Typescript.
 
-Primarily goals are to have a Creep task tree as described by Jon winsley as well as begin to implment newer meta in the screeps space, I.E Automatic room design principals described within a youtube video from Marvin (https://www.youtube.com/watch?v=YcruUDbqa7E), Surpassing the fourth great filter of Remote Mining (Described at https://wiki.screepspl.us/index.php/Great_Filters#Building), and potentially beginning to have a more successful attempt in screeps.
+Primarily goals are to have a Creep task tree as described by Jon winsley as well as begin to implement newer meta in the screeps space: I.E Automatic room design principals described within a youtube video from Marvin (https://www.youtube.com/watch?v=YcruUDbqa7E), Surpassing the fourth great filter of Remote Mining (Described at https://wiki.screepspl.us/index.php/Great_Filters#Building), and potentially beginning to have a more successful attempt in screeps.
 
 
 ## Screeps Typescript Starter
