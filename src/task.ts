@@ -23,9 +23,8 @@ interface TaskAction {
 
 interface TaskPrerequisite {
     meets: (creep: Creep) => boolean; //
-    toMeet: (creep: Creep) => TaskAction[]; // a list of actions a creep needs to take to meet a prerequesit for the action.
+    toMeet: (creep: Creep) => TaskAction[]; // a list of actions a creep needs to take to meet a prerequesite for the action.
 }
-
 
 class CreepCanWork implements TaskPrerequisite {
     meets(creep: Creep) {
@@ -35,12 +34,27 @@ class CreepCanWork implements TaskPrerequisite {
         return [];
     };
 }
+
 class CreepCanMove implements TaskPrerequisite {
     meets(creep: Creep) {
         return creep.getActiveBodyparts(MOVE) > 0;
     }
     toMeet(creep: Creep){
         return [];
+    }
+}
+
+class CreepCanHold implements TaskPrerequisite {
+    meets(creep: Creep) {
+        return creep.store.getFreeCapacity() > 0;
+    }
+    toMeet(creep: Creep) {
+
+        var container:AnyStructure[] = creep.room.find(FIND_STRUCTURES).filter((structure:AnyStructure) => structure.structureType == STRUCTURE_CONTAINER);
+
+        return [
+            new DepositAction(container[0], RESOURCE_ENERGY)
+        ]
     }
 }
 
@@ -73,7 +87,6 @@ class CreepHasEnergy implements TaskPrerequisite {
             return structure.structureType == STRUCTURE_CONTAINER;
 
         }).map((structure:AnyStructure) => new WithdrawAction(structure, RESOURCE_ENERGY));
-
     }
 }
 
