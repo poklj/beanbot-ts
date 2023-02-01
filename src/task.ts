@@ -19,6 +19,7 @@ interface TaskRequest {
 interface TaskAction {
     requirements: TaskPrerequisite[];
     action: (creep: Creep) => boolean; // False = action Not complete, True = action Complete
+    cost:(creep:Creep) => number;
 }
 
 interface TaskPrerequisite {

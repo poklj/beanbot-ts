@@ -1,4 +1,4 @@
-class MoveAction implements TaskAction {
+class MoveAction implements TaskAction{
 
     destination: RoomPosition;
     distance: number;
@@ -27,8 +27,8 @@ class MoveAction implements TaskAction {
     }
 
     //The cost to move a creep towards the actions destination.
-    cost(creep: Creep){
-        creep.pos.getRangeTo(this.destination);
+    cost(creep: Creep):number{
+        return creep.pos.getRangeTo(this.destination);
     }
 }
 

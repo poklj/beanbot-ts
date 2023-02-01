@@ -17,5 +17,7 @@ class BuildAction implements TaskAction {
         }
         return false; //Task not complete.
     }
-
+    cost(creep:Creep) {
+        return 0;
+    }
 }

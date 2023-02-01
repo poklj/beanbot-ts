@@ -5,6 +5,9 @@ class WithdrawAction implements TaskAction {
         this.destContainer = container;
         this.resourceType = resource;
     }
+    cost(creep: Creep){
+        return 0;
+    }
 
     requirements = [
         new CreepIsNear(this.destContainer.pos, 1)

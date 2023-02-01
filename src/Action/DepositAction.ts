@@ -5,6 +5,7 @@ class DepositAction implements TaskAction {
         this.dest = destination
         this.resType = resType
     }
+
     requirements = [
         new CreepIsNear(this.dest.pos, 1),
         new CreepHasEnergy()
@@ -17,5 +18,7 @@ class DepositAction implements TaskAction {
         return true;
 
     };
-
+    cost(creep:Creep){
+        return 0;
+    }
 }
